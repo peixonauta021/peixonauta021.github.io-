@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Perfil do Aluno</title>
+  <style>
+    :root{--bg:#f6f8fa;--card:#fff;--accent:#2f9be6;--muted:#666}
+    body{font-family:Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);margin:0;padding:24px;color:#222}
+    .container{max-width:900px;margin:0 auto;background:var(--card);padding:28px;border-radius:8px;box-shadow:0 6px 24px rgba(0,0,0,.06)}
+    header{display:flex;gap:20px;align-items:center}
+    .foto{width:120px;height:120px;border-radius:8px;object-fit:cover;border:2px solid #e9eef6}
+    h1{margin:0;font-size:22px}
+    .slogan{color:var(--muted);margin-top:6px;font-size:14px}
+    .meta{margin-left:auto;text-align:right;font-size:13px;color:var(--muted)}
+    section{margin-top:20px}
+    h2{font-size:16px;margin:0 0 8px 0;color:#123}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .card{background:#fbfeff;padding:14px;border-radius:6px;border:1px solid #eef5fb}
+    ul{margin:8px 0;padding-left:18px}
+    .skills{display:flex;flex-wrap:wrap;gap:8px}
+    .skill{background:#eef8ff;color:#064a7a;padding:6px 10px;border-radius:16px;font-size:13px}
+    a{color:var(--accent);text-decoration:none}
+    @media (max-width:700px){ .grid{grid-template-columns:1fr} header{flex-direction:column;align-items:flex-start} .meta{text-align:left;margin-left:0} }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1>Joab Nícollas Naro da Silva</h1>
+        <div class="slogan">Desenvolvedor em formação</div>
+      </div>
+
+      <div class="meta">
+        <div>Desenvolvimento de Sistemas</div>
+        <div>1° Ano: 3º semestre</div>
+      </div>
+
+      <img class="foto" src="C:\Users\i2025303835\VS CODE\HTML\imagempessoal.jpeg" alt="C:\Users\i2025303835\VS CODE\HTML\imagempessoal.jpeg" />
+    </header>
+
+    <section class="grid" aria-labelledby="contato-title">
+      <div class="card" id="contato">
+        <h2 id="contato-title">Contato</h2>
+        <p style="margin:6px 0">Email: <a href="mailto:jnns3@aluno.ifal.edu.br">jnns3@aluno.ifal.edu.br</a></p>
+        <p style="margin:6px 0">GitHub: <a href="https://github.com/peixonauta021" target="_blank" rel="noopener">github.com/peixonauta021</a></p>
+      </div>
+
+      <div class="card" id="educacao">
+        <h2>Educação</h2>
+        <p style="margin:6px 0"><strong>Instituto Federal de Alagoas</strong>Curso Técnico Integrado ao Médio em Desenvolvimento de Sistemas</p>
+        <ul>
+          <li>Disciplina de destaque: Programação web, introdução à programação, fundamentos de informática</li>
+          <li>Projeto acadêmico: Aplicação de controle de despesas com React</li>
+        </ul>
+      </div>
+    </section>
+
+    <section style="margin-top:16px">
+      <div class="card">
+        <h2>Experiência Profissional</h2>
+        <p style="margin:6px 0"><strong>Estagiário em Desenvolvimento</strong> — Empresa Fictícia (06/2024 — 12/2024)</p>
+        <ul>
+          <li>Desenvolvimento de interfaces web responsivas com HTML, CSS e JavaScript</li>
+          <li>Integração com APIs REST e tratamento de dados</li>
+          <li>Participação em reuniões de planejamento ágil</li>
+        </ul>
+
+        <p style="margin:6px 0"><strong>Projeto Pessoal — Controle de Despesas</strong></p>
+        <ul>
+          <li>Formulário para inserção de gastos, tabela interativa e resumo por categoria</li>
+          <li>Implementação com React e armazenamento local (localStorage)</li>
+        </ul>
+      </div>
+    </section>
+
+    <section style="margin-top:16px">
+      <div class="card">
+        <h2>Habilidades</h2>
+        <div class="skills" role="list">
+          <span class="skill">HTML5</span>
+          <span class="skill">CSS3</span>
+          <span class="skill">JavaScript</span>
+          <span class="skill">React</span>
+          <span class="skill">Git</span>
+          <span class="skill">SQL</span>
+          <span class="skill">Análise de Dados</span>
+          <span class="skill">Comunicação</span>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
