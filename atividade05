@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Atividade 05 - Formulário</title>
+  <style>
+    body{font-family:Segoe UI,Roboto,Arial;background:#f6f8fa;padding:24px}
+    .container{max-width:760px;margin:0 auto;background:#fff;padding:20px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+    h1{font-size:20px;margin-bottom:12px}
+    .row{display:flex;gap:12px;flex-wrap:wrap}
+    .field{flex:1 1 220px;display:flex;flex-direction:column;margin-bottom:10px}
+    label{font-size:13px;margin-bottom:6px}
+    input[type="text"], input[type="email"], input[type="date"], select, textarea{padding:8px;border:1px solid #cfd8dc;border-radius:4px;font-size:14px}
+    textarea{min-height:80px;resize:vertical}
+    .small{font-size:12px;color:#666}
+    .error{border-color:#e74c3c;background:#fff6f6}
+    .error-msg{color:#e74c3c;font-size:12px;margin-top:4px}
+    .success{background:#e6ffef;border:1px solid #2ecc71;color:#096b2b;padding:10px;border-radius:4px;margin-bottom:12px}
+    .actions{display:flex;gap:8px;align-items:center;margin-top:12px}
+    button{padding:8px 14px;border-radius:4px;border:1px solid #2f6f9e;background:#2f9be6;color:#fff;cursor:pointer}
+    button[type="reset"]{background:#f1f1f1;color:#333;border-color:#ccc}
+    .checkbox-group{display:flex;flex-wrap:wrap;gap:8px}
+    .note{font-size:12px;color:#555;margin-top:6px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Formulário de Cadastro</h1>
+
+    <div id="result"></div>
+
+    <form id="cadForm" novalidate>
+      <div class="row">
+        <div class="field">
+          <label for="nome">Nome *</label>
+          <input id="nome" name="nome" type="text" required />
+          <div class="error-msg" data-for="nome"></div>
+        </div>
+
+        <div class="field">
+          <label for="sobrenome">Sobrenome *</label>
+          <input id="sobrenome" name="sobrenome" type="text" required />
+          <div class="error-msg" data-for="sobrenome"></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label for="email">E‑mail *</label>
+          <input id="email" name="email" type="email" required />
+          <div class="error-msg" data-for="email"></div>
+        </div>
+
+        <div class="field">
+          <label for="nascimento">Nascimento *</label>
+          <input id="nascimento" name="nascimento" type="date" required />
+          <div class="error-msg" data-for="nascimento"></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field" style="flex:0 0 120px">
+          <label for="ddd">DDD *</label>
+          <select id="ddd" name="ddd" required>
+            <option value="">Selecione</option>
+            <!-- Lista de DDDs válidos no Brasil -->
+            <option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option>
+            <option>21</option><option>22</option><option>24</option><option>27</option><option>28</option>
+            <option>31</option><option>32</option><option>33</option><option>34</option><option>35</option><option>37</option><option>38</option>
+            <option>41</option><option>42</option><option>43</option><option>44</option><option>45</option><option>46</option>
+            <option>47</option><option>48</option><option>49</option>
+            <option>51</option><option>53</option><option>54</option><option>55</option>
+            <option>61</option><option>62</option><option>63</option><option>64</option><option>65</option><option>66</option><option>67</option><option>68</option><option>69</option>
+            <option>71</option><option>73</option><option>74</option><option>75</option><option>77</option><option>79</option>
+            <option>81</option><option>82</option><option>83</option><option>84</option><option>85</option><option>86</option><option>87</option><option>88</option><option>89</option>
+            <option>91</option><option>92</option><option>93</option><option>94</option><option>95</option><option>96</option><option>97</option><option>98</option><option>99</option>
+          </select>
+          <div class="error-msg" data-for="ddd"></div>
+        </div>
+
+        <div class="field">
+          <label for="telefone">Telefone (somente números) *</label>
+          <input id="telefone" name="telefone" type="text" inputmode="numeric" placeholder="Ex: 912345678" required />
+          <div class="error-msg" data-for="telefone"></div>
+          <div class="small">Use 8 ou 9 dígitos sem o DDD. Ex: 912345678</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field" style="flex:1 1 100%">
+          <label>Atividades Extracurriculares (opcional — máximo 3)</label>
+          <div class="checkbox-group" id="atividades">
+            <label><input type="checkbox" value="Esportes" name="ativ"> Esportes</label>
+            <label><input type="checkbox" value="Musica" name="ativ"> Música</label>
+            <label><input type="checkbox" value="Teatro" name="ativ"> Teatro</label>
+            <label><input type="checkbox" value="Robótica" name="ativ"> Robótica</label>
+            <label><input type="checkbox" value="Voluntariado" name="ativ"> Voluntariado</label>
+            <label><input type="checkbox" value="Idiomas" name="ativ"> Idiomas</label>
+            <label><input type="checkbox" value="Artes" name="ativ"> Artes</label>
+          </div>
+          <div class="error-msg" data-for="atividades"></div>
+          <div class="note">Marque até 3 atividades. As atividades são opcionais.</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field" style="flex:1 1 100%">
+          <label for="comentario">Comentários *</label>
+          <textarea id="comentario" name="comentario" required></textarea>
+          <div class="error-msg" data-for="comentario"></div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button type="submit">Enviar Formulário</button>
+        <button type="reset">Limpar</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    (function(){
+      const form = document.getElementById('cadForm');
+      const result = document.getElementById('result');
+      const maxAtiv = 3;
+      const atividades = Array.from(document.querySelectorAll('#atividades input[type="checkbox"]'));
+
+      // bloqueia mais de 3 checks dinamicamente
+      function handleAtivChange() {
+        const checked = atividades.filter(c => c.checked).length;
+        const msgEl = document.querySelector('[data-for="atividades"]');
+        msgEl.textContent = '';
+        atividades.forEach(cb => cb.disabled = false);
+        if (checked >= maxAtiv) {
+          atividades.filter(c => !c.checked).forEach(c => c.disabled = true);
+        }
+      }
+      atividades.forEach(cb => cb.addEventListener('change', handleAtivChange));
+
+      function clearErrors(){
+        document.querySelectorAll('.error-msg').forEach(e => e.textContent = '');
+        document.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
+        result.innerHTML = '';
+      }
+
+      function setError(el, msg){
+        const msgEl = document.querySelector('[data-for="' + el + '"]');
+        if (msgEl) msgEl.textContent = msg;
+        const input = document.getElementById(el);
+        if (input) input.classList.add('error');
+      }
+
+      function validateEmail(email){
+        // validação simples: contém @ e . após o @
+        return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email);
+      }
+
+      function isValidDateString(s){
+        if(!s) return false;
+        const d = new Date(s);
+        if (Number.isNaN(d.getTime())) return false;
+        // não pode ser no futuro
+        const hoje = new Date();
+        hoje.setHours(0,0,0,0);
+        return d <= hoje;
+      }
+
+      function onlyDigits(s){ return /^\d+$/.test(s); }
+
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        clearErrors();
+
+        let ok = true;
+
+        // Campos obrigatórios simples
+        const camposObrig = ['nome','sobrenome','email','nascimento','ddd','telefone','comentario'];
+        camposObrig.forEach(id => {
+          const el = document.getElementById(id);
+          if(!el || !el.value || String(el.value).trim() === ''){
+            setError(id, 'Campo obrigatório');
+            ok = false;
+          }
+        });
+
+        // email
+        const email = document.getElementById('email').value.trim();
+        if(email && !validateEmail(email)){
+          setError('email','E‑mail inválido (precisa conter @ e domínio)');
+          ok = false;
+        }
+
+        // nascimento
+        const nasc = document.getElementById('nascimento').value;
+        if(nasc && !isValidDateString(nasc)){
+          setError('nascimento','Data inválida ou no futuro');
+          ok = false;
+        }
+
+        // DDD - select já limita, mas checagem extra
+        const ddd = document.getElementById('ddd').value;
+        if(ddd === ''){
+          setError('ddd','Escolha um DDD válido');
+          ok = false;
+        }
+
+        // telefone
+        const tel = document.getElementById('telefone').value.replace(/\s+/g,'');
+        if(tel){
+          if(!onlyDigits(tel)){
+            setError('telefone','Apenas números');
+            ok = false;
+          } else if(!(tel.length === 8 || tel.length === 9)){
+            setError('telefone','Use 8 ou 9 dígitos (sem DDD)');
+            ok = false;
+          }
+        }
+
+        // atividades: opcional, mas máximo 3
+        const checkedAtiv = atividades.filter(c => c.checked).length;
+        if(checkedAtiv > maxAtiv){
+          const msgEl = document.querySelector('[data-for="atividades"]');
+          if (msgEl) msgEl.textContent = 'Marque no máximo ' + maxAtiv + ' atividades';
+          ok = false;
+        }
+
+        if(!ok){
+          // foco no primeiro erro visível
+          const firstError = document.querySelector('.error');
+          if(firstError) firstError.focus();
+          // mensagem geral opcional
+          result.innerHTML = '<div class="error-msg">Corrija os erros no formulário e envie novamente.</div>';
+          return;
+        }
+
+        // Se tudo ok, mostrar mensagem de sucesso
+        result.innerHTML = '<div class="success">Cadastro realizado com sucesso!</div>';
+        // aqui pode enviar via fetch ou prosseguir com submit normal
+        // form.submit(); // descomentear se quiser submeter ao servidor
+      });
+
+      // reset limpa mensagens e reabilita checkboxes
+      form.addEventListener('reset', function(){
+        setTimeout(() => {
+          clearErrors();
+          atividades.forEach(c => c.disabled = false);
+        }, 0);
+      });
+
+    })();
+  </script>
+</body>
+</html>
