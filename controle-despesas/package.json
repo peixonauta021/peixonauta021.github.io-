@@ -1,0 +1,17 @@
+{
+  "name": "controle-despesas",
+  "version": "1.0.0",
+  "description": "Um projeto para controle de despesas pessoais.",
+  "main": "src/scripts/app.js",
+  "scripts": {
+    "start": "live-server src/pages",
+    "build": "echo 'Build process not defined'",
+    "test": "echo 'No tests defined'"
+  },
+  "author": "Seu Nome",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Despesas</title>
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Controle de Despesas</h1>
+        <form id="expense-form">
+            <label for="description">Descrição:</label>
+            <input type="text" id="description" required>
+
+            <label for="amount">Valor:</label>
+            <input type="number" id="amount" required>
+
+            <button type="button" id="add-expense">Adicionar</button>
+            <button type="button" id="calculate-expenses">Calcular</button>
+        </form>
+
+        <table id="expense-table">
+            <thead>
+                <tr>
+                    <th>Descrição</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- As despesas serão adicionadas aqui -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="../components/expenseForm.js"></script>
+    <script src="../components/expenseTable.js"></script>
+    <script src="../scripts/app.js"></script>
+</body>
+</html>
